@@ -3,6 +3,7 @@
 [endpoint](http://cloud-dev-image-filter-dev.us-east-1.elasticbeanstalk.com/) 
 
 [Original image](https://www.w3schools.com/w3css/img_snowtops.jpg)
+
 ![](https://www.w3schools.com/w3css/img_snowtops.jpg)
 
 [**Filtered image**](http://cloud-dev-image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://www.w3schools.com/w3css/img_snowtops.jpg)

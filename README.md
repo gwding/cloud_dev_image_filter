@@ -4,7 +4,7 @@
 
 [Original image](https://www.w3schools.com/w3css/img_snowtops.jpg)
 
-[Filtered image example](http://cloud-dev-image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://www.w3schools.com/w3css/img_snowtops.jpg)
+[**Filtered image**](http://cloud-dev-image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://www.w3schools.com/w3css/img_snowtops.jpg)
 
 [Invalid URL format](http://cloud-dev-image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=abcdefg)
 

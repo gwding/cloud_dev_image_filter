@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { isUri } from 'valid-url';
 
 (async () => {
 
@@ -27,7 +28,32 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // RETURNS
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
-  /**************************************************************************** */
+  app.get("/filteredimage", async (req, res) => {
+    let { image_url } = req.query;
+
+    if (!image_url) {
+      return res.status(400).send("image url missing")
+    }
+    if (!isUri(image_url)) {
+      return res.status(400).send("image_url format invalid")
+    }
+
+    try {
+      let filtered_image = await filterImageFromURL(image_url)
+      if(filtered_image != "invalid_image_link"){
+        return res.status(200).sendFile(filtered_image, async callback => {
+          await deleteLocalFiles([filtered_image])
+        })
+      } else {
+        return res.status(400).send("image_url does not point to valid image")
+      }
+    } catch (err) {
+      console.error(err)
+      return res.status(400).send("image filtering failed")
+    }
+
+    //
+  } );
 
   //! END @TODO1
   
